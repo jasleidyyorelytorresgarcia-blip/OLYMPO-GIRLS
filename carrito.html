@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Carrito - OLYMPO*GIRLS</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header><a href="index.html">← Volver a la Tienda</a></header>
+<section style="max-width:500px;margin:50px auto;background:white;padding:30px;border-radius:20px;text-align:center">
+<h2>🛒 Tu Carrito</h2>
+<div id="lista"></div>
+<h3 id="total">Total: $0</h3>
+<button onclick="vaciar()" style="background:#7a1f3d;color:white;padding:10px 20px;border:none;border-radius:20px">Vaciar Carrito</button>
+<br><br>
+<a href="https://wa.me/3009436491" target="_blank" style="background:#25D366;color:white;padding:12px 25px;border-radius:20px;text-decoration:none">Comprar por WhatsApp</a>
+</section>
+<script>
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let lista = document.getElementById("lista");
+let total = 0;
+if(carrito.length === 0){ lista.innerHTML = "<p>Tu carrito está vacío</p>"; }
+carrito.forEach(p => {
+  lista.innerHTML += "<p>♛ " + p.nombre + " - $" + p.precio.toLocaleString() + "</p>";
+  total += p.precio;
+});
+document.getElementById("total").textContent = "Total: $" + total.toLocaleString();
+function vaciar(){ localStorage.removeItem("carrito"); location.reload(); }
+</script>
+</body>
+</html>

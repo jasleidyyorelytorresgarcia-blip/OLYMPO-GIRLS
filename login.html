@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Iniciar Sesión - OLYMPO*GIRLS</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><a href="index.html">← Volver a OLYMPO*GIRLS</a></header>
+
+<section style="max-width:400px;margin:50px auto;background:white;padding:30px;border-radius:20px;text-align:center">
+<h2>♛ Bienvenida Diosa ♛</h2>
+<p>Inicia sesión para entrar al Olimpo</p>
+<input type="text" id="nombre" placeholder="Tu nombre" style="width:90%;padding:10px;margin:10px;border-radius:10px;border:1px solid pink">
+<br>
+<input type="email" placeholder="Tu correo" style="width:90%;padding:10px;margin:10px;border-radius:10px;border:1px solid pink">
+<br>
+<button onclick="entrar()" style="background:#7a1f3d;color:white;padding:12px 30px;border:none;border-radius:20px;cursor:pointer">Entrar al Olimpo</button>
+<p id="mensaje"></p>
+</section>
+
+<script>
+function entrar(){
+  let n = document.getElementById("nombre").value;
+  if(n === ""){ alert("Escribe tu nombre bb"); return; }
+  document.getElementById("mensaje").innerHTML = "Hola " + n + " ♛ ¡Ya entraste al Olimpo!";
+}
+</script>
+</body>
+</html>
